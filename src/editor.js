@@ -91,12 +91,13 @@ Editor.prototype.render = function(el) {
   keyMaps['Shift-Tab'] = 'shiftTabAndIndentContinueMarkdownList';
 
   this.codemirror = CodeMirror.fromTextArea(el, {
-    mode: 'markdown',
+    mode: 'gfm',
     theme: 'paper',
     tabSize: '2',
     indentWithTabs: true,
     lineNumbers: false,
     autofocus: true,
+    lineWrapping: true,
     extraKeys: keyMaps
   });
 

@@ -55,8 +55,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('concat', function() {
     var data = grunt.file.read('vendor/codemirror.js');
-    data = data.replace('window.CodeMirror', 'var CodeMirror');
-    ['continuelist', 'xml', 'markdown'].forEach(function(name) {
+    ['overlay', 'xml', 'markdown', 'gfm', 'javascript', 'meta'].forEach(function(name) {
       data += '\n' + grunt.file.read('vendor/' + name + '.js');
     });
     data += '\n' + grunt.file.read('src/intro.js');

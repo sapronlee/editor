@@ -18,6 +18,17 @@ Markdown is a text formatting syntax inspired on plain text email. In the words 
 _emphasize_    __strong__
 ```
 
+```javascript
+(function(mod) {
+  if (typeof exports == "object" && typeof module == "object") // CommonJS
+    module.exports = mod();
+  else if (typeof define == "function" && define.amd) // AMD
+    return define([], mod);
+  else // Plain browser env
+    this.CodeMirror = mod();
+})
+```
+
 **Shortcuts**
 
 - Add/remove bold:
@@ -150,7 +161,7 @@ You can nest them:
 > > And, they can be nested.
 
 > #### Headers in blockquotes
-> 
+>
 > * You can quote a list.
 > * Etc.
 ```
@@ -192,7 +203,7 @@ Three or more dashes for asterisks.
 
 * * *
 
-- - - - 
+- - - -
 ```
 
 ### Manual Line Breaks
