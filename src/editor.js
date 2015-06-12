@@ -55,6 +55,13 @@ Editor.toolbar = toolbar;
 Editor.markdown = function(text) {
   if (window.marked) {
     // use marked as markdown parser
+    if (window.hljs) {
+      marked.setOptions({
+        highlight: function(code, lang, callback) {
+          return hljs.highlight(lang, code).value;
+        }
+      });
+    }
     return marked(text);
   }
 };

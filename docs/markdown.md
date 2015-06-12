@@ -13,10 +13,8 @@ Markdown is a text formatting syntax inspired on plain text email. In the words 
 
 ### Strong and Emphasize
 
-```
 *emphasize*    **strong**
 _emphasize_    __strong__
-```
 
 ```javascript
 (function(mod) {

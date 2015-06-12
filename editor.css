@@ -125,3 +125,9 @@
 .editor-preview > p {
   margin-top: 0;
 }
+
+.editor-preview pre {
+  margin: 10px;
+  font-size: 14px;
+  background: #F5F5F5;
+}

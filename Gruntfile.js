@@ -54,10 +54,12 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('concat', function() {
-    var data = grunt.file.read('vendor/codemirror.js');
+    var data = grunt.file.read('vendor/codemirror/codemirror.js');
+
     ['overlay', 'xml', 'markdown', 'gfm', 'javascript', 'meta'].forEach(function(name) {
-      data += '\n' + grunt.file.read('vendor/' + name + '.js');
+      data += '\n' + grunt.file.read('vendor/codemirror/' + name + '.js');
     });
+
     data += '\n' + grunt.file.read('src/intro.js');
     data += '\n' + grunt.file.read('src/editor.js');
     grunt.file.write('tmp/editor.js', data);
@@ -90,6 +92,7 @@ module.exports = function(grunt) {
     grunt.file.copy('docs/markdown.html', 'build/markdown.html');
     grunt.file.copy('docs/yue.css', 'build/yue.css');
     grunt.file.copy('docs/marked.js', 'build/marked.js');
+    grunt.file.copy('docs/highlight.pack.js', 'build/highlight.pack.js');
   });
 
   grunt.loadNpmTasks('grunt-contrib-connect');
